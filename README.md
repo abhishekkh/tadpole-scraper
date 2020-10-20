@@ -2,6 +2,7 @@
 - Unfortunately the tadpoles app does not provide a bulk download option and you need to manually download each image one by one.
 - I used google sign in and not email id based sign in when I setup the account, couldn't find any bulk downloaders for that.
 - Once all photos are downloaded you can sync them to your cloud, amazon photos in my case.
+- Hope this helps someone! If it does please star this repo so I know, thanks!
 
 ## Setup
 This script is very trivial and you do need to perform some manual steps. Some of these steps can be automated but I didnt want tpo spend any more time on this :smile:
