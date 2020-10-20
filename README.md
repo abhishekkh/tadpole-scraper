@@ -1,4 +1,4 @@
-### Python script to download all images from  tadpole
+## Bulk download all images from  tadpole
 - Unfortunately the tadpoles app does not provide a bulk download option and you need to manually download each image one by one.
 - I used google sign in and not email id based sign in when I setup the account, couldn't find any bulk downloaders for that.
 - Once all photos are downloaded you can sync them to your cloud, amazon photos in my case.
