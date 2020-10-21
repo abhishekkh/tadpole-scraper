@@ -18,7 +18,7 @@ def download_image(obj, key):
         'sec-fetch-dest': 'image',
         'referer': 'https://www.tadpoles.com/parents',
         'accept-language': 'en-US,en;q=0.9',
-        'cookie': '__utmc=73569303; __utmz=73569303.1603142149.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); G_ENABLED_IDPS=google; G_AUTHUSER_H=1; DgU00="+2r/uFsJAKEZ4HH/y0PV4x2w/g6v/iDenRLsQp0YG9s=1604351762_be49a2a81564ceca6c5886d3253b757bgAJ9cQB9cQEoVQN1c2VxAlUGYXRob21lcQNVAm5zcQRYGAAAAHAtQmlrQzVISllOSk5EQzJjSkY1aml1SnEFVQR1c2VycQZjZjIubG9naW4udXNlcgpVc2VyCnEHKYFxCH1xCShVBl9lbWFpbHEKWBQAAABhYmhpc2hla2toQGdtYWlsLmNvbXELVQlfbmlja25hbWVxDE5VBF94aWRxDVgVAAAAMTA0OTk2NTI1MDU3MTIzNzcwOTY4cQ5VD192ZXJpZmllZF9lbWFpbHEPiFUPX3NlcnZpY2VfcGFyYW1zcRBOVQhfc2VydmljZXERVQZnb29nbGVxEnVidYZxEy4="; __utma=73569303.284115472.1603142149.1603147549.1603153385.3'
+        'cookie': 'YOUR_COOKIE'
     }
 
     params = (
