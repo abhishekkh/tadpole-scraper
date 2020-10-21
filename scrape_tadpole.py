@@ -18,7 +18,7 @@ def download_image(obj, key):
         'sec-fetch-dest': 'image',
         'referer': 'https://www.tadpoles.com/parents',
         'accept-language': 'en-US,en;q=0.9',
-        'cookie': 'YOUR_COOKIE'
+        'cookie': '__utmc=73569303; __utmz=73569303.1603142149.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); G_ENABLED_IDPS=google; G_AUTHUSER_H=1; DgU00="+2r/uFsJAKEZ4HH/y0PV4x2w/g6v/iDenRLsQp0YG9s=1604351762_be49a2a81564ceca6c5886d3253b757bgAJ9cQB9cQEoVQN1c2VxAlUGYXRob21lcQNVAm5zcQRYGAAAAHAtQmlrQzVISllOSk5EQzJjSkY1aml1SnEFVQR1c2VycQZjZjIubG9naW4udXNlcgpVc2VyCnEHKYFxCH1xCShVBl9lbWFpbHEKWBQAAABhYmhpc2hla2toQGdtYWlsLmNvbXELVQlfbmlja25hbWVxDE5VBF94aWRxDVgVAAAAMTA0OTk2NTI1MDU3MTIzNzcwOTY4cQ5VD192ZXJpZmllZF9lbWFpbHEPiFUPX3NlcnZpY2VfcGFyYW1zcRBOVQhfc2VydmljZXERVQZnb29nbGVxEnVidYZxEy4="; __utma=73569303.284115472.1603142149.1603147549.1603153385.3'
     }
 
     params = (
@@ -40,15 +40,24 @@ def main(sub_folder):
                 # get the params
                 clean_url = url.split('?')[1]
                 print(clean_url)
-                params = clean_url.split('&')
-                for param in params:
-                    if "obj=" in param:
-                        obj = param[4:]
-                    if "key=" in param:
-                        key = param[4:]
+                for queryParam in entry['request']['queryString']:
+                    if queryParam['name'] == 'obj':
+                        obj = queryParam['value']
+                    if queryParam['name'] == 'key':
+                        key = queryParam['value']
+
+                response_headers = entry['response']['headers']
+                for header in response_headers:
+                    if header['name'] == 'content-type':
+                        media_type = header['value']
+                        break
+                if media_type == 'image/png':
+                    media_extension = '.mp4'
+                else:
+                    media_extension = '.jpg'
                 response = download_image(obj, key)
                 if response.status_code == 200:
-                    img_name = FOLDER + sub_folder + '/img' + '_' + str(img_count) + '.jpg'
+                    img_name = FOLDER + sub_folder + '/img' + '_' + str(img_count) + media_extension
                     with open(img_name, 'wb') as handler:
                         handler.write(response.content)
                         img_count += 1

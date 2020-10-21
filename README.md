@@ -16,7 +16,7 @@ curl ..... > test.jpg
 open test.jpg
 ```
 5. Now we need the headers from the curl command. For that use https://curl.trillworks.com/ and get the corresponding headers.
-6. Copy the headers and replace the headers in the scrape_tadpole.py script
+6. Copy the headers and replace the headers in the scrape_tadpole.py script. Pay special attention to cookie field.
 7. Finally you will need to copy the HAR files into the image folders. This needs to be done for each month and is kinda painful. It can be automated but shouldn't take you more than 30 mins. Make sure to _clear the log_ before each reading and also _disable cache_
 - Create folders under images/
 ```bash
